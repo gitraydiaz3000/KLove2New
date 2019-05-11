@@ -1,0 +1,45 @@
+﻿@model IEnumerable<KLoveEmployeeManagement.Music>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Music</h2>
+<img height="100" width="100" src="~/Content/guitar.GIF" />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.songTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.songAlbum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.songArtist)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.songTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.songAlbum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.songArtist)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.songID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.songID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.songID })
+        </td>
+    </tr>
+}
+
+</table>

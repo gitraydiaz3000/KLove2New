@@ -1,0 +1,26 @@
+﻿
+
+
+@using KLoveEmployeeManagement.Models;
+
+@model IEnumerable<Music>
+@{
+    ViewBag.Title = "Employee Music";
+}
+
+<h2>Click a Song</h2>
+
+@if (Model != null)
+{
+    <ul>
+        @foreach (Music music in Model)
+        {
+        <li>
+            @Html.ActionLink(music.songTitle, "Index", "EmployeesForMusic", new { favoriteSongId = music.songID }, null)
+
+        </li>
+        }
+    </ul>
+
+}
+

@@ -1,0 +1,24 @@
+﻿@using KLoveEmployeeManagement.Models;
+
+@model IEnumerable<Department>
+
+@{
+    ViewBag.Title = "Employee Departments";
+}
+
+<h2>Click a Department:</h2>
+
+@if (Model != null)
+{
+    <ul>
+        @foreach (Department department in Model)
+        {
+        <li>
+            @Html.ActionLink(department.departmentName, "Index", "Employees", new { departmentId = department.departmentID }, null)
+
+        </li>
+        }
+    </ul>
+
+}
+

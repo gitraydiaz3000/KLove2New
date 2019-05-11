@@ -1,0 +1,42 @@
+﻿@model KLoveEmployeeManagement.Music
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Music</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.songTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.songTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.songAlbum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.songAlbum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.songArtist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.songArtist)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.songID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
